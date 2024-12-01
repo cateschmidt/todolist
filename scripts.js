@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addTask(taskObj.text, taskObj.completed);
   });
 });
-
+// Add submit event listener
 todoForm.addEventListener('submit', function(event) {
   event.preventDefault();
   const newTask = todoInput.value;
@@ -22,7 +22,7 @@ todoForm.addEventListener('submit', function(event) {
   addTask(newTask, false);
   todoInput.value = '';
 });
-
+// Add new task function
 function addTask(task, completed = false) {
   const listItem = document.createElement('li');
 
@@ -32,20 +32,20 @@ function addTask(task, completed = false) {
     taskItem.style.textDecoration = 'line-through';
   }
   listItem.appendChild(taskItem);
-
+// Add check box for each item
   const checkBox = document.createElement('input');
   checkBox.setAttribute('type', 'checkbox');
   checkBox.checked = completed;
   listItem.appendChild(checkBox);
-
+// Add delete button functionality
   const deleteButton = document.createElement('button');    
   deleteButton.textContent = 'Delete';
   listItem.appendChild(deleteButton);
-
+// Add edit button functionality
   const editButton = document.createElement('button');
   editButton.textContent = 'Edit';
   listItem.appendChild(editButton);
-
+// Check box functionality - cross through the text on click
   checkBox.addEventListener('change', function() {
     if (this.checked) {
       taskItem.style.textDecoration = 'line-through';
@@ -54,12 +54,12 @@ function addTask(task, completed = false) {
     }
     saveToLocalStorage();
   });
-
+// Delete button event listener
   deleteButton.addEventListener('click', function() {
     listItem.remove();
     saveToLocalStorage();
   });
-
+// Edit button event listener
   editButton.addEventListener('click', function() {
     const isEditing = listItem.classList.contains('editing');
     if (isEditing) {
