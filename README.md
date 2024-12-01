@@ -6,8 +6,7 @@ This software uses CSS, HTML, and Javascript to create a to do list app. The for
 
 My purpose for writing this software is to create a user friendly to do list that people can use to organize their lives.
 
-[Software Demo Video](http://youtube.link.goes.here)
-
+[Software Demo Video] (https://youtu.be/mTaQwp_PZw8)
 # Development Environment
 
 I used Github and visual studio code to create this software.
